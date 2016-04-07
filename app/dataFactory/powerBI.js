@@ -2,7 +2,7 @@
  * Created by rensvanw on 4/7/2016.
  */
 angular.module('casusMIT3')
-    .factory('powerBiFactory', ['http', function($http){
+    .factory('powerBiFactory', ['$http', function($http){
 
        var urlBase = 'https://api.powerbi.com/beta/vwoudenberg';
         var powerBiFactory = {};
