@@ -6,7 +6,8 @@ angular.module('casusMIT3', [
   'casusMIT3.index',
   'casusMIT3.results',
     'ui.bootstrap',
-    'AdalAngular'
+    'AdalAngular',
+    'ngMaterial'
 ]).
 config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', '$sceDelegateProvider', function($routeProvider, $httpProvider, adalAuthenticationServiceProvider, $sceDelegateProvider) {
 
