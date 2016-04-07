@@ -1,7 +1,7 @@
 /**
  * Created by rensvanw on 4/7/2016.
  */
-angular.module('casusMIT3.powerBi')
+angular.module('casusMIT3')
     .factory('powerBiFactory', ['http', function($http){
 
        var urlBase = 'https://api.powerbi.com/beta/vwoudenberg';
@@ -33,6 +33,8 @@ angular.module('casusMIT3.powerBi')
             return $http.post(urlBase + '/datasets/' + id + '/tables/' + tableName + '/rows', row);
             
         }
+
+        ///
 
 
     }
