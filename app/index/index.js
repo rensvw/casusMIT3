@@ -14,7 +14,7 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
 .controller('indexCtrl', ['adalAuthenticationService', '$http', '$scope', function(adalService,$http,$scope) {
 
   $scope.reports;
-
+    $scope.selectedReport;
 
     $http.get('https://api.powerbi.com/beta/myorg/reports').then(function (response) {
         $scope.reports = response.data.value;
