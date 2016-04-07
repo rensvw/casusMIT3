@@ -16,27 +16,15 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
   $scope.reports;
   test();
 
-  function test(){
-    $http.get('https://api.powerbi.com/beta/myorg/reports')
-      .then(function (response) {
-        console.log("het is gelukt");
+    $http.get('https://api.powerbi.com/beta/myorg/reports')).then(function (response) {
         $scope.reports = response.data.value;
         $scope.selectedReport = $scope.reports[0].embedUrl;
-        console.log("het is gelukt");
-      });
+    });
 
-}
-
-  function tst() {
     var iframe = document.getElementById("report");
     iframe.addEventListener("load", function () {
-      var token = adal.getCachedToken("https://analysis.windows.net/powerbi/api");
-      iframe.contentWindow.postMessage(JSON.stringify({
-            action: "loadReport",
-            accesToken: token
-          }),
-          "*");
+        var token = adal.getCachedToken("https://analysis.windows.net/powerbi/api");
+        iframe.contentWindow.postMessage(JSON.stringify({ action: "loadReport", accessToken: token }), "*");
     });
-  }
 
 }]);

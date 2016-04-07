@@ -14,19 +14,22 @@ config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 
            redirectTo: '/index'
            });
 
-    adalAuthenticationServiceProvider.init(
-        {
-            tenant: 'vwoudenberg.onmicrosoft.com/',
-            clientId: 'f9829472-0637-4ede-9b92-79baef61829d',
-            clientSecret: 'tEzHCUxrRoB1k6b7huXH56VOfM++aoO+4a//GV7G7hs=',
-            resource: 'https://analysis.windows.net/powerbi/api',
-            redirectUri: 'https://casuszuyd.azurewebsites.net',
-            authorityUri: 'https://login.windows.net/common/oauth2/authorize',
-            
-
+    adalProvider.init({
+            tenant: "72f988bf-86f1-41af-91ab-2d7cd011db47", // microsoft.onmicrosoft.com
+            clientId: "92f12926-5cf0-4460-83b6-14366bbaa88a", // Power BI AngularJS SPA
+            endpoints: {
+                "https://api.powerbi.com": "https://analysis.windows.net/powerbi/api",
+            },
+            requireADLogin: true,
+            cacheLocation: 'localStorage'
         },
         $httpProvider
     );
+
+    $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        'https://*.powerbi.com/**'
+    ]);
 
 
 
