@@ -15,8 +15,8 @@ config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 
            });
 
     adalProvider.init({
-            tenant: "72f988bf-86f1-41af-91ab-2d7cd011db47", // microsoft.onmicrosoft.com
-            clientId: "92f12926-5cf0-4460-83b6-14366bbaa88a", // Power BI AngularJS SPA
+            tenant: "4c4da4a8-6a78-4ea2-8593-ae0608a6200b", // microsoft.onmicrosoft.com
+            clientId: "f9829472-0637-4ede-9b92-79baef61829d", // Power BI AngularJS SPA
             endpoints: {
                 "https://api.powerbi.com": "https://analysis.windows.net/powerbi/api",
             },
