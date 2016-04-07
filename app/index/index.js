@@ -11,7 +11,7 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
 }])
 
 
-.controller('indexCtrl', ['adalAuthenticationService', '$http', function($http, adalService) {
+.controller('indexCtrl', ['adalAuthenticationService', '$http', function(adalService,$http) {
 
   test();
 
