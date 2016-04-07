@@ -15,7 +15,7 @@ angular.module('casusMIT3.results', ['ngRoute','AdalAngular'])
   $scope.dashboards;
   $scope.status;
 
-  listAllDashboards();
+
 
   function listAllDashboards(){
     powerBiFactory.listAllDashboards()
