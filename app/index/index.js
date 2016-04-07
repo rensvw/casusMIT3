@@ -19,6 +19,7 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
   function test(){
     $http.get('https://api.powerbi.com/beta/myorg/reports')
       .then(function (response) {
+        console.log("het is gelukt");
         $scope.reports = response.data.value;
         $scope.selectedReport = $scope.reports[0].embedUrl;
         console.log("het is gelukt");
