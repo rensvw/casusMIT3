@@ -15,7 +15,7 @@ config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 
 
     adalAuthenticationServiceProvider.init(
         {
-            tenant: 'https://casuszuyd.azurewebsites.net/',
+            tenant: 'vwoudenberg.onmicrosoft.com/',
             clientId: '39596d89-8c4a-49ad-b299-69dbc7a7cd28'
         },
         $httpProvider
