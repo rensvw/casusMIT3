@@ -20,7 +20,9 @@ config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 
             clientId: 'f9829472-0637-4ede-9b92-79baef61829d',
             clientSecret: 'tEzHCUxrRoB1k6b7huXH56VOfM++aoO+4a//GV7G7hs=',
             resource: 'https://analysis.windows.net/powerbi/api',
-            redirectUri: 'https://casuszuyd.azurewebsites.net'
+            redirectUri: 'https://casuszuyd.azurewebsites.net',
+            authorityUri: 'https://login.windows.net/common/oauth2/authorize',
+            
 
         },
         $httpProvider
