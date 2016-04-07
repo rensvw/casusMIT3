@@ -10,6 +10,6 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
   });
 }])
 
-.controller('indexCtrl', 'adalAuthenticationService', [function(adalService) {
+.controller('indexCtrl', ['adalAuthenticationService', function(adalService) {
 
 }]);
