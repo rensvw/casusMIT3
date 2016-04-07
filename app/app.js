@@ -8,13 +8,13 @@ angular.module('casusMIT3', [
     'ui.bootstrap',
     'AdalAngular'
 ]).
-config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 'adalProvider', '$sceDelegateProvider', function($routeProvider, $httpProvider, adalAuthenticationServiceProvider, adalProvider, $sceDelegateProvider) {
+config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', '$sceDelegateProvider', function($routeProvider, $httpProvider, adalAuthenticationServiceProvider, $sceDelegateProvider) {
 
        $routeProvider.otherwise({
            redirectTo: '/index'
            });
 
-    adalProvider.init({
+    adalAuthenticationServiceProvider.init({
             tenant: "4c4da4a8-6a78-4ea2-8593-ae0608a6200b", // microsoft.onmicrosoft.com
             clientId: "f9829472-0637-4ede-9b92-79baef61829d", // Power BI AngularJS SPA
             endpoints: {
