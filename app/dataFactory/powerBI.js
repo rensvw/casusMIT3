@@ -4,7 +4,7 @@
 angular.module('casusMIT3')
     .factory('powerBiFactory', ['$http', function($http){
 
-       var urlBase = 'https://api.powerbi.com/beta/vwoudenberg';
+       var urlBase = 'https://api.powerbi.com/beta/myorg';
         var powerBiFactory = {};
 
         /// List Dashboards ///
