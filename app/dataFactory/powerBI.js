@@ -10,7 +10,7 @@ angular.module('casusMIT3')
         /// List Dashboards ///
 
         powerBiFactory.listAllDashboards = function () {
-            return $http.get(urlBase + '/dashboards');
+            return $http.get('https://api.powerbi.com/beta/myorg/dashboards');
         }
 
         /// DataSet Get + Post functions ///

@@ -10,6 +10,15 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
   });
 }])
 
-.controller('indexCtrl', ['adalAuthenticationService', function(adalService) {
+
+.controller('indexCtrl', ['adalAuthenticationService', '$http', '$resource', function($resource, $http, adalService) {
+
+  $http.get('https://api.powerbi.com/beta/myorg/dashboards')
+      .succes(function () {
+        console.log("yay");
+      })
+      .error(function () {
+        console.log("nope");
+      })
 
 }]);
