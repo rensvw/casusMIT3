@@ -10,7 +10,7 @@ angular.module('casusMIT3.results', ['ngRoute','AdalAngular'])
   });
 }])
 
-.controller('resultsCtrl', ['$scope','powerBiFactory',function($scope,powerBiFactory) {
+.controller('resultsCtrl', ['$scope',function($scope) {
 
   $scope.dashboards;
   $scope.status;
