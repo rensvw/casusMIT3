@@ -10,6 +10,6 @@ angular.module('casusMIT3.results', ['ngRoute','AdalAngular'])
   });
 }])
 
-.controller('resultsCtrl', [function() {
+.controller('resultsCtrl', ['powerBiFactory',function(powerBiFactory) {
 
 }]);
