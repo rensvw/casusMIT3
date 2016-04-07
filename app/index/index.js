@@ -21,5 +21,7 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
         $scope.selectedReport = $scope.reports[0].embedUrl;
     });
 
+    $scope.test222 = 0;
+
 
 }]);;
