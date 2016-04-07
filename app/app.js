@@ -22,11 +22,11 @@ config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 
                 'https://api.powerbi.com':'https://analysis.windows.net/powerbi/app'
             },
             requireADLogin: true,
-            cacheLocation:'localStorage'
+            
         },
         $httpProvider
     );
 
- 
+
 
 }]);
