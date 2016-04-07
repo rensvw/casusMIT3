@@ -27,9 +27,6 @@ config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 
         $httpProvider
     );
 
-    $sceDelegateProvider.resourceUrlWhitelist([
-        'self',
-        'https://*powerbi.com/**'
-    ]);
+ 
 
 }]);
