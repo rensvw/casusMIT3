@@ -21,10 +21,6 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
         $scope.selectedReport = $scope.reports[0].embedUrl;
     });
 
-    var iframe = document.getElementById("report");
-    iframe.addEventListener("load", function () {
-        var token = adal.getCachedToken("https://analysis.windows.net/powerbi/api");
-        iframe.contentWindow.postMessage(JSON.stringify({ action: "loadReport", accessToken: token }), "*");
-    });
+
 
 }]);;
