@@ -31,7 +31,7 @@ listAllDashboards();
   }
 
     function getDashboardTile(){
-        powerBi.getDashboardTile($scope.dashboards[0].id)
+        powerBi.getDashboardTile()
             .then(function (response) {
                 $scope.tile = response.data;
 
