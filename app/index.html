@@ -36,15 +36,18 @@
       <a class="navbar-brand" href="#/view1">Home</a>
     </div>
 
-    <div class="collapse navbar-collapse" uib-collapse="navCollapsed">
+    <div class="collapse navbar-collapse" uib-collapse="navCollapsed" ng-controller="authenticationCtrl">
       <ul class="nav navbar-nav">
         <li><a href="#/view1">View 1</a></li>
         <li><a href="#/view2">View 2</a></li>
+
+          <li><a class="btn btn-link" ng-show="userInfo.isAuthenticated" ng-click="logout()">Logout</a></li>
+          <li><a class="btn btn-link" ng-hide=" userInfo.isAuthenticated" ng-click="login()">Login</a></li>
+
       </ul>
-
-
     </div>
   </div>
+
 </nav>
 
   <!--[if lt IE 7]>
@@ -64,5 +67,6 @@
   <script src="view2/view2.js"></script>
   <script src="bower_components/adal-angular/dist/adal.min.js"></script>
   <script src="bower_components/adal-angular/dist/adal-angular.min.js"></script>
+<script src="authentication/authentication.js"></script>
 </body>
 </html>

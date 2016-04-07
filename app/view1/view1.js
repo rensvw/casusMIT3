@@ -6,7 +6,7 @@ angular.module('casusMIT3.view1', ['ngRoute','AdalAngular'])
   $routeProvider.when('/view1', {
     templateUrl: 'view1/view1.html',
     controller: 'View1Ctrl',
-    requireADLogin: false
+    requireADLogin: true
   });
 }])
 
