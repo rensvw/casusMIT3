@@ -17,12 +17,10 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
 
   function test(){
   $http.get('https://api.powerbi.com/beta/myorg/dashboards')
-      .succes(function (d) {
+      .then(function () {
         console.log("yay");
       })
-      .error(function (d) {
-        console.log("nope");
-      })
+
 }
 
 
