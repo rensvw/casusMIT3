@@ -16,7 +16,7 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
   test();
 
   function test(){
-  $http({method: 'GET', url: 'https://api.powerbi.com/beta/myorg/dashboards'})
+  $http.get('https://api.powerbi.com/beta/myorg/dashboards')
       .succes(function (d) {
         console.log("yay");
       })
