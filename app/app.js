@@ -6,7 +6,6 @@ angular.module('casusMIT3', [
   'casusMIT3.view1',
   'casusMIT3.view2',
     'ui.bootstrap',
-    'casusMIT3.authentication',
     'AdalAngular'
 ]).
 config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', function($routeProvider, $httpProvider, adalAuthenticationServiceProvider) {
