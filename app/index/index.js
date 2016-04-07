@@ -11,15 +11,17 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
 }])
 
 
-.controller('indexCtrl', ['adalAuthenticationService', '$http', function(adalService,$http) {
+.controller('indexCtrl', ['adalAuthenticationService', '$http', '$scope', function(adalService,$http,$scope) {
 
+  $scope.reports;
   test();
 
   function test(){
-  $http.get('https://api.powerbi.com/beta/myorg/dashboards')
-      .then(function () {
-        console.log("yay");
-      })
+    $http.get('https://api.powerbi.com/beta/myorg/reports')
+      .then(function (response) {
+        $scope.reports = response.data.value;
+        $scope.selectedReport = $scope.reports[0].embedUrl;
+      });
 
 }
 
