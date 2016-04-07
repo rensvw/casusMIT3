@@ -1,11 +1,10 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('casusMIT3', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version',
+  'casusMIT3.view1',
+  'casusMIT3.view2',
     'ui.bootstrap',
     'AdalAngular'
 ]).

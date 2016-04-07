@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute','AdalAngular'])
+angular.module('casusMIT3.view2', ['ngRoute','AdalAngular'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view2', {
