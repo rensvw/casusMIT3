@@ -11,28 +11,28 @@ angular.module('casusMIT3')
 
         powerBiFactory.listAllDashboards = function () {
             return $http.get('https://api.powerbi.com/beta/myorg/dashboards');
-        }
+        };
 
         /// DataSet Get + Post functions ///
 
         powerBiFactory.listAllDataSets = function () {
             return $http.get(urlBase + '/datasets');
-        }
+        };
 
         powerBiFactory.CreateDataSet = function (dataset) {
             return $http.post(urlBase + '/datasets' + '?defaultRetentionPolicy=none',dataset);
-        }
+        };
 
         /// Table functions ///
 
         powerBiFactory.listAllTables = function (id) {
             return $http.get(urlBase + '/datasets/' + id  + '/tables');
-        }
+        };
 
         powerBiFactory.addRowToTable = function(id, tableName, row){
             return $http.post(urlBase + '/datasets/' + id + '/tables/' + tableName + '/rows', row);
             
-        }
+        };
 
         ///
 
@@ -40,5 +40,5 @@ angular.module('casusMIT3')
     }
 
 
-    ])
+    ]);
 
