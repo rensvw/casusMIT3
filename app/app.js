@@ -18,11 +18,8 @@ config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 
         {
             tenant: 'vwoudenberg.onmicrosoft.com/',
             clientId: '39596d89-8c4a-49ad-b299-69dbc7a7cd28',
-            endpoints: {
-                'https://api.powerbi.com':'https://analysis.windows.net/powerbi/app'
-            },
-            requireADLogin: true,
             
+
         },
         $httpProvider
     );
