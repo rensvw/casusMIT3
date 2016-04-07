@@ -8,7 +8,7 @@ angular.module('casusMIT3', [
     'ui.bootstrap',
     'AdalAngular'
 ]).
-config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', '$sceDelegateProvider', function($routeProvider, $httpProvider, adalAuthenticationServiceProvider, $sceDelegateProvider) {
+config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 'adalProvider', '$sceDelegateProvider', function($routeProvider, $httpProvider, adalAuthenticationServiceProvider, adalProvider, $sceDelegateProvider) {
 
        $routeProvider.otherwise({
            redirectTo: '/index'
