@@ -17,7 +17,7 @@ angular.module('casusMIT3.results', ['ngRoute','AdalAngular'])
     $scope.tile
 
 listAllDashboards();
-    getDashboardTile()
+    getDashboardTile();
 
   function listAllDashboards(){
     powerBi.listAllDashboards()
