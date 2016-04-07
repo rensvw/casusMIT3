@@ -14,7 +14,7 @@ angular.module('casusMIT3.results', ['ngRoute','AdalAngular'])
 
   $scope.dashboards;
   $scope.status;
-    $scope.tile
+    $scope.tile;
 
 listAllDashboards();
     getDashboardTile();
@@ -31,7 +31,7 @@ listAllDashboards();
   }
 
     function getDashboardTile(){
-        powerBi.getDashboardTile()
+        powerBi.getDashboardTile('a34b834a-8988-490e-ad29-3accf6270a98')
             .then(function (response) {
                 $scope.tile = response.data;
 
