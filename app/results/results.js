@@ -22,7 +22,7 @@ listAllDashboards();
   function listAllDashboards(){
     powerBi.listAllDashboards()
         .then(function (response) {
-          $scope.dashboards = response.data;
+          $scope.dashboards = response.data ;
 
         },function (error) {
           $scope.status = "Unable to load Dashboard data: " + error.message;
