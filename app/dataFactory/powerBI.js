@@ -35,7 +35,7 @@ angular.module('casusMIT3')
         };
 
         ///
-
+        return powerBiFactory;
 
     }
 
