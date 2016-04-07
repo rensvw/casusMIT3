@@ -3,15 +3,15 @@
 // Declare app level module which depends on views, and components
 angular.module('casusMIT3', [
   'ngRoute',
-  'casusMIT3.view1',
-  'casusMIT3.view2',
+  'casusMIT3.index',
+  'casusMIT3.results',
     'ui.bootstrap',
     'AdalAngular'
 ]).
 config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', function($routeProvider, $httpProvider, adalAuthenticationServiceProvider) {
 
        $routeProvider.otherwise({
-           redirectTo: '/view1'
+           redirectTo: '/index'
            });
 
     adalAuthenticationServiceProvider.init(
