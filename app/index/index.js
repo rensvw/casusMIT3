@@ -16,7 +16,7 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
   $scope.reports;
   test();
 
-    $http.get('https://api.powerbi.com/beta/myorg/reports')).then(function (response) {
+    $http.get('https://api.powerbi.com/beta/myorg/reports').then(function (response) {
         $scope.reports = response.data.value;
         $scope.selectedReport = $scope.reports[0].embedUrl;
     });
@@ -27,4 +27,4 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
         iframe.contentWindow.postMessage(JSON.stringify({ action: "loadReport", accessToken: token }), "*");
     });
 
-}]);
+}]);;
