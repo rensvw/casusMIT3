@@ -10,6 +10,22 @@ angular.module('casusMIT3.results', ['ngRoute','AdalAngular'])
   });
 }])
 
-.controller('resultsCtrl', ['powerBiFactory',function(powerBiFactory) {
+.controller('resultsCtrl', ['$scope','powerBiFactory',function($scope,powerBiFactory) {
+
+  $scope.dashboards;
+  $scope.status;
+
+  listAllDashboards();
+
+  function listAllDashboards(){
+    powerBiFactory.listAllDashboards()
+        .then(function (response) {
+          $scope.dashboards = response.data;
+
+        },function (error) {
+          $scope.status = "Unable to load Dashboard data: " + error.message;
+
+        })
+  }
 
 }]);
