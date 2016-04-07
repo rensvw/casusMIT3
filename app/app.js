@@ -17,8 +17,10 @@ config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', 
     adalAuthenticationServiceProvider.init(
         {
             tenant: 'vwoudenberg.onmicrosoft.com/',
-            clientId: '39596d89-8c4a-49ad-b299-69dbc7a7cd28',
-            
+            clientId: 'f9829472-0637-4ede-9b92-79baef61829d',
+            clientSecret: 'tEzHCUxrRoB1k6b7huXH56VOfM++aoO+4a//GV7G7hs=',
+            resource: 'https://analysis.windows.net/powerbi/api',
+            redirectUri: 'https://casuszuyd.azurewebsites.net'
 
         },
         $httpProvider
