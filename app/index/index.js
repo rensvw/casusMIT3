@@ -25,14 +25,16 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
 
 }
 
-  var iframe = document.getElementById("report");
-  iframe.addEventListener("load",function () {
-    var token = adal.getCachedToken("https://analysis.windows.net/powerbi/api");
-    iframe.contentWindow.postMessage(JSON.stringify({
-      action: "loadReport",
-      accesToken: token
-    }),
-    "*");
-  });
+  function tst() {
+    var iframe = document.getElementById("report");
+    iframe.addEventListener("load", function () {
+      var token = adal.getCachedToken("https://analysis.windows.net/powerbi/api");
+      iframe.contentWindow.postMessage(JSON.stringify({
+            action: "loadReport",
+            accesToken: token
+          }),
+          "*");
+    });
+  }
 
 }]);
