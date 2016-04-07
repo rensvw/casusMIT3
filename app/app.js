@@ -6,8 +6,19 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'AdalAngular'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', function($routeProvider, $httpProvider, adalAuthenticationServiceProvider) {
+
+       $routeProvider.otherwise({redirectTo: '/view1'});
+
+    adalAuthenticationServiceProvider.init(
+        {
+            tenant: 'https://casuszuyd.azurewebsites.net/',
+            clientId: '39596d89-8c4a-49ad-b299-69dbc7a7cd28'
+        },
+        $httpProvider
+    );
+
 }]);
