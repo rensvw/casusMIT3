@@ -13,6 +13,9 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
 
 .controller('indexCtrl', ['adalAuthenticationService', '$http', function($http, adalService) {
 
+  test();
+
+  function test(){
   $http({method: 'GET', url: 'https://api.powerbi.com/beta/myorg/dashboards'})
       .succes(function (d) {
         console.log("yay");
@@ -20,5 +23,7 @@ angular.module('casusMIT3.index', ['ngRoute','AdalAngular'])
       .error(function (d) {
         console.log("nope");
       })
+}
+
 
 }]);
