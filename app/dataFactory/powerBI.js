@@ -34,7 +34,16 @@ angular.module('casusMIT3')
             
         };
 
-        ///
+
+
+        /// Get tiles
+
+        powerBi.getDashboardTile = function (dashboardID) {
+            return $http.get(urlBase + '/' + dashboardID + '/tiles');
+        };
+
+
+
         return powerBi;
 
     }

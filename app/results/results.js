@@ -14,8 +14,10 @@ angular.module('casusMIT3.results', ['ngRoute','AdalAngular'])
 
   $scope.dashboards;
   $scope.status;
+    $scope.tile
 
 listAllDashboards();
+    getDashboardTile()
 
   function listAllDashboards(){
     powerBi.listAllDashboards()
@@ -27,5 +29,17 @@ listAllDashboards();
 
         })
   }
+
+    function getDashboardTile(){
+        powerBi.getDashboardTile($scope.dashboards[0].id)
+            .then(function (response) {
+                $scope.tile = response.data;
+
+            },function (error) {
+                $scope.status = "Unable to load Dashboard data: " + error.message;
+
+            })
+    }
+
 
 }]);
