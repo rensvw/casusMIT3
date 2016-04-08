@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('casusMIT3.results', ['ngRoute','AdalAngular'])
+angular.module('casusMIT3.results', ['ngRoute','AdalAngular','ngMaterial'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/results', {
