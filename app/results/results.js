@@ -28,7 +28,9 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
 /*
         createDataset();
 */
-
+        function addRowToTable() {
+            powerBi.addRowToTable(id,tableName,row);
+        }
         $scope.table = $scope.datasets;
 
         $scope.datasetID = powerBi.listAllDataSets().then(
