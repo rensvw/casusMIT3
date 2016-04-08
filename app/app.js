@@ -16,7 +16,7 @@ angular.module('casusMIT3', [
 
     adalAuthenticationServiceProvider.init({
             tenant: "4c4da4a8-6a78-4ea2-8593-ae0608a6200b", // microsoft.onmicrosoft.com
-            clientId: "39596d89-8c4a-49ad-b299-69dbc7a7cd28", // Power BI AngularJS SPA
+            clientId: "f9829472-0637-4ede-9b92-79baef61829d", // Power BI AngularJS SPA
             endpoints: {
                 'https://api.powerbi.com': 'https://analysis.windows.net/powerbi/api',
             },
