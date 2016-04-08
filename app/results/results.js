@@ -28,9 +28,9 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
 
         $scope.table = $scope.datasets;
 
-        $scope.data = powerBi.listAllDataSets().then(
+        $scope.datasetID = powerBi.listAllDataSets().then(
             function (response) {
-                $scope.data = response.data.value[0].id;
+                $scope.datasetID = response.data.value[0].id;
             }
         );
 
@@ -73,18 +73,14 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         }
 
         function listAllTables() {
-            powerBi.listAllTables(
-                $scope.data = powerBi.listAllDataSets().then(
-                function (response) {
-                    $scope.data = response.data.value[0].id;
-                })
+            powerBi.listAllTable($scope.datasetID)
                 .then(function (response) {
                     $scope.tables = response.data;
 
                 }, function (error) {
                     $scope.status = "Unable to load Table data: " + error.message;
 
-                }));
+                });
 
         }
 
