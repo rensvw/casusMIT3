@@ -30,7 +30,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
 
         $scope.datasetID = powerBi.listAllDataSets().then(
             function (response) {
-                $scope.datasetID = response.data.value[0].id;
+                $scope.datasetID = (response.data.value[0].id).toString();
             }
         );
 
