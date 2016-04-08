@@ -24,7 +24,9 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         listAllDashboards();
         listAllGroups();
         listAllDatasets();
-        listAllTables();
+        //listAllTables();
+
+        $scope.table = $scope.datasets.getByIndex(0);
 
         function listAllDashboards() {
             powerBi.listAllDashboards()
