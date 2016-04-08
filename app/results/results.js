@@ -17,15 +17,17 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         $scope.tile;
         $scope.groups;
         $scope.datasets;
+        $scope.tables;
 
         listAllDashboards();
         listAllGroups();
         listAllDatasets();
+        listAllTables();
 
         function listAllDashboards() {
             powerBi.listAllDashboards()
                 .then(function (response) {
-                    $scope.dashboards = response.data;
+                    $scope.dashboards = response.data.value;
 
                 }, function (error) {
                     $scope.status = "Unable to load Dashboard data: " + error.message;
@@ -36,7 +38,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         function getDashboardTile() {
             powerBi.listAllTiles('a34b834a-8988-490e-ad29-3accf6270a98')
                 .then(function (response) {
-                    $scope.tile = response.data;
+                    $scope.tile = response.data.value;
 
                 }, function (error) {
                     $scope.status = "Unable to load Dashboard Tile data: " + error.message;
@@ -50,7 +52,14 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         }
 
         function listAllTables() {
-            powerBi.listAllTables();
+            powerBi.listAllTables($scope.datasets[0].id)
+                .then(function (response) {
+                    $scope.tables = response.data;
+
+                }, function (error) {
+                    $scope.status = "Unable to load Table data: " + error.message;
+
+                });
 
         }
 
