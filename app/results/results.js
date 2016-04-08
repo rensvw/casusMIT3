@@ -166,8 +166,39 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
             ]
         };
 
+        var body = {
+            'name': 'SalesMarketing',
+            'tables': [
+                {
+                    'name': 'Product',
+                    'columns': [
+                        {
+                            'name': 'ProductID',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'Name',
+                            'dataType': 'string'
+                        },
+                        {
+                            'name': 'Category',
+                            'dataType': 'string'
+                        },
+                        {
+                            'name': 'IsCompete',
+                            'dataType': 'bool'
+                        },
+                        {
+                            'name': 'ManufacturedOn',
+                            'dataType': 'DateTime'
+                        }
+                    ]
+                }
+            ]
+        };
+
         function createDataset() {
-            powerBi.CreateDataSet(JSON.stringify(dataset))
+            powerBi.CreateDataSet(JSON.stringify(body))
                 .then(function (response) {
                     console.log(response);
 
