@@ -74,7 +74,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         }
 
         function listAllTables() {
-            powerBi.listAllTables($scope.datasetID)
+            powerBi.listAllTables(encodeURIComponent($scope.datasetID))
                 .then(function (response) {
                     $scope.tables = response.data;
 
