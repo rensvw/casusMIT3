@@ -174,6 +174,52 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
                 })
         }
 
+        var request = new XMLHttpRequest();
+
+        request.open('POST', 'https://api.powerbi.com/v1.0/myorg/datasets?defaultRetentionPolicy=None');
+
+        request.setRequestHeader('Content-Type', 'application/json');
+
+        request.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                console.log('Status:', this.status);
+                console.log('Headers:', this.getAllResponseHeaders());
+                console.log('Body:', this.responseText);
+            }
+        };
+
+        var body = {
+            'name': 'SalesMarketing',
+            'tables': [
+                {
+                    'name': 'Product',
+                    'columns': [
+                        {
+                            'name': 'ProductID',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'Name',
+                            'dataType': 'string'
+                        },
+                        {
+                            'name': 'Category',
+                            'dataType': 'string'
+                        },
+                        {
+                            'name': 'IsCompete',
+                            'dataType': 'bool'
+                        },
+                        {
+                            'name': 'ManufacturedOn',
+                            'dataType': 'DateTime'
+                        }
+                    ]
+                }
+            ]
+        };
+
+        request.send(JSON.stringify(body));
 
 
     }]);
