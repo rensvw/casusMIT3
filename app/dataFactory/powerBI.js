@@ -36,7 +36,7 @@ angular.module('casusMIT3')
         };
 
         powerBi.CreateDataSet = function (dataset) {
-            return $http.post(urlBase + '/datasets' + '?defaultRetentionPolicy=none', dataset);
+            return $http.post(urlBase + '/datasets?defaultRetentionPolicy=None', dataset);
         };
 
         /// Table functions ///
