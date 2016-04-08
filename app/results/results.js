@@ -19,7 +19,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         $scope.datasets;
         $scope.tables;
 
-        $scope.datasetID = JSON.parse($scope.datasets);
+        $scope.datasetID = $scope.datasets.id;
 
         listAllDashboards();
         listAllGroups();
@@ -56,7 +56,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         function listAllDatasets() {
             powerBi.listAllDataSets()
                 .then(function (response) {
-                    $scope.datasets = response.data.value;
+                    $scope.datasets = JSON.parse(response.data.value);
 
                 }, function (error) {
                     $scope.status = "Unable to load Datasets Data: " + error.message;
