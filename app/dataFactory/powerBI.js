@@ -13,6 +13,22 @@ angular.module('casusMIT3')
             return $http.get(urlBase + '/dashboards');
         };
 
+        /// Get tiles ///
+
+        powerBi.listAllTiles = function (dashboardID) {
+            return $http.get(urlBase + '/' + dashboardID + '/tiles');
+        };
+
+        powerBi.getTile = function (dashboardID,tileID) {
+            return $http.get(urlBase + '/' + dashboardID + '/tiles/' + tileID);
+        };
+
+        /// Get Reports //
+
+        powerBi.listAllReports = function () {
+            return $http.get(urlBase + '/reports');
+        };
+
         /// DataSet Get + Post functions ///
 
         powerBi.listAllDataSets = function () {
@@ -34,15 +50,19 @@ angular.module('casusMIT3')
             
         };
 
-
-
-        /// Get tiles
-
-        powerBi.getDashboardTile = function (dashboardID) {
-            return $http.get(urlBase + '/' + dashboardID + '/tiles');
+        powerBi.updateExistingTable = function(id,tableName,item){
+            return $http.put(urlBase + '/datasets/' + id + '/tables/' + tableName,item);
         };
 
+        powerBi.clearRowsTable = function (id,tableName) {
+          return $http.delete(urlBase + '/datasets/' + id + '/tables/' + tableName + '/rows');
+        };
 
+        /// List Groups (Tile collections) ///
+
+        powerBi.listAllGroups = function () {
+            return $http.get(urlBase + '/groups');
+        };
 
         return powerBi;
 

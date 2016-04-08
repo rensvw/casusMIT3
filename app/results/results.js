@@ -15,9 +15,10 @@ angular.module('casusMIT3.results', ['ngRoute','AdalAngular','ngMaterial'])
   $scope.dashboards;
   $scope.status;
     $scope.tile;
+    $scope.groups;
 
 listAllDashboards();
-    getDashboardTile();
+listAllGroups();
 
   function listAllDashboards(){
     powerBi.listAllDashboards()
@@ -31,15 +32,27 @@ listAllDashboards();
   }
 
     function getDashboardTile(){
-        powerBi.getDashboardTile('a34b834a-8988-490e-ad29-3accf6270a98')
+        powerBi.listAllTiles('a34b834a-8988-490e-ad29-3accf6270a98')
             .then(function (response) {
                 $scope.tile = response.data;
 
             },function (error) {
-                $scope.status = "Unable to load Dashboard data: " + error.message;
+                $scope.status = "Unable to load Dashboard Tile data: " + error.message;
 
-            })
+            });
     }
+
+    function listAllGroups(){
+        powerBi.listAllGroups()
+            .then(function (response) {
+                $scope.groups = response.data;
+
+            },function (error) {
+                $scope.status = "Unable to load Groups data: " + error.message;
+
+            });
+    }
+
 
 
 }]);
