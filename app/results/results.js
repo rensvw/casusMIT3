@@ -169,7 +169,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         function createDataset() {
             powerBi.CreateDataSet(JSON.stringify(dataset))
                 .then(function (response) {
-                    $scope.result = response;
+                    console.log(response);
 
                 })
         }
