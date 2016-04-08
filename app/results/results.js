@@ -10,7 +10,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         });
     }])
 
-    .controller('resultsCtrl', ['$scope', 'powerBi', function ($scope, powerBi) {
+    .controller('resultsCtrl', ['$scope', 'powerBi', 'adalAuthenticationService', function ($scope, powerBi,adal) {
 
         $scope.dashboards;
         $scope.status;
@@ -21,13 +21,19 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
 
        // $scope.datasetID = $scope.datasets.id;
 
-        listAllDashboards();
-        listAllGroups();
-        listAllDatasets();
-        /*listAllTables();*/
-/*
-        createDataset();
-*/
+        var iframe = document.getElementById("report");
+        iframe.addEventListener("load", function () {
+            var token = adal.getCachedToken("https://analysis.windows.net/powerbi/api");
+            iframe.contentWindow.postMessage(JSON.stringify({ action: "loadReport", accessToken: token }), "*");
+        });
+
+        // Get the list of workspaces
+        $http.get('https://api.powerbi.com/beta/myorg/groups').then(function (response) {
+            $scope.workspaces = [{ name: 'My Workspace', id: null }].concat(response.data.value);
+        }, function (error) {
+            $scope.workspaceError = error;
+        });
+
         function addRowToTable() {
             powerBi.addRowToTable(id,tableName,row);
         }
@@ -210,6 +216,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
 
                 })
         }*/
+/*
 
         var request = new XMLHttpRequest();
 
@@ -259,6 +266,23 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         console.log(body);
 
         request.send(JSON.stringify(body));
+*/
+
+        // Update reports when a new workspace is selected
+        $scope.$watch('selectedWorkspace', function (selectedWorkspace) {
+
+            $scope.selectedReport = null
+            $scope.reports = null;
+
+            // Get the list of reports
+            $http.get('https://api.powerbi.com/beta/myorg/' + (selectedWorkspace ? 'groups/' + selectedWorkspace + '/reports' : 'reports')).then(function (response) {
+                $scope.reports = response.data.value;
+                $scope.selectedReport = $scope.reports[0].embedUrl;
+            }, function (error) {
+                $scope.reportError = error;
+            });
+
+        });
 
 
     }]);
