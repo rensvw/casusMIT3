@@ -25,6 +25,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         listAllGroups();
         listAllDatasets();
         listAllTables();
+        createDataset();
 
         $scope.table = $scope.datasets;
 
@@ -97,6 +98,82 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
 
                 });
         }
+
+        var dataset = {
+            'name': 'BostonHousing',
+            'tables': [
+                {
+                    'name': 'BostonHousing',
+                    'columns': [
+                        {
+                            'name': 'CRIM',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'ZN',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'INDUS',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'CHAS',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'NOX',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'RM',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'AGE',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'DIS',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'RAD',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'TAX',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'PTRATIO',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'B',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'LSTAT',
+                            'dataType': 'Int64'
+                        },
+                        {
+                            'name': 'MEDV',
+                            'dataType': 'Int64'
+                        }
+                    ]
+                }
+            ]
+        };
+
+        function createDataset() {
+            powerBi.CreateDataSet(dataset)
+                .then(function (response) {
+                    $scope.result = response;
+
+                })
+        }
+
 
 
     }]);
