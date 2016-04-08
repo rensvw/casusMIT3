@@ -19,7 +19,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         $scope.datasets;
         $scope.tables;
 
-        $scope.datasetID = $scope.datasets['id'];
+        $scope.datasetID = JSON.parse($scope.datasets);
 
         listAllDashboards();
         listAllGroups();
