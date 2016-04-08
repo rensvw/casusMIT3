@@ -2,9 +2,9 @@
  * Created by rensvanw on 4/7/2016.
  */
 angular.module('casusMIT3')
-    .factory('powerBi', ['$http', function($http){
+    .factory('powerBi', ['$http', function ($http) {
 
-       var urlBase = 'https://api.powerbi.com/beta/myorg';
+        var urlBase = 'https://api.powerbi.com/beta/myorg';
         var powerBi = {};
 
         /// List Dashboards ///
@@ -19,7 +19,7 @@ angular.module('casusMIT3')
             return $http.get(urlBase + '/' + dashboardID + '/tiles');
         };
 
-        powerBi.getTile = function (dashboardID,tileID) {
+        powerBi.getTile = function (dashboardID, tileID) {
             return $http.get(urlBase + '/' + dashboardID + '/tiles/' + tileID);
         };
 
@@ -36,26 +36,26 @@ angular.module('casusMIT3')
         };
 
         powerBi.CreateDataSet = function (dataset) {
-            return $http.post(urlBase + '/datasets' + '?defaultRetentionPolicy=none',dataset);
+            return $http.post(urlBase + '/datasets' + '?defaultRetentionPolicy=none', dataset);
         };
 
         /// Table functions ///
 
         powerBi.listAllTables = function (id) {
-            return $http.get(urlBase + '/datasets/' + id  + '/tables');
+            return $http.get(urlBase + '/datasets/' + id + '/tables');
         };
 
-        powerBi.addRowToTable = function(id, tableName, row){
+        powerBi.addRowToTable = function (id, tableName, row) {
             return $http.post(urlBase + '/datasets/' + id + '/tables/' + tableName + '/rows', row);
-            
+
         };
 
-        powerBi.updateExistingTable = function(id,tableName,item){
-            return $http.put(urlBase + '/datasets/' + id + '/tables/' + tableName,item);
+        powerBi.updateExistingTable = function (id, tableName, item) {
+            return $http.put(urlBase + '/datasets/' + id + '/tables/' + tableName, item);
         };
 
-        powerBi.clearRowsTable = function (id,tableName) {
-          return $http.delete(urlBase + '/datasets/' + id + '/tables/' + tableName + '/rows');
+        powerBi.clearRowsTable = function (id, tableName) {
+            return $http.delete(urlBase + '/datasets/' + id + '/tables/' + tableName + '/rows');
         };
 
         /// List Groups (Tile collections) ///
