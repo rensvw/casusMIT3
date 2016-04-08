@@ -24,8 +24,10 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         listAllDashboards();
         listAllGroups();
         listAllDatasets();
-        listAllTables();
+        /*listAllTables();*/
+/*
         createDataset();
+*/
 
         $scope.table = $scope.datasets;
 
@@ -99,6 +101,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
                 });
         }
 
+/*
         var dataset = {
             'name': 'BostonHousing',
             'tables': [
@@ -196,14 +199,15 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
                 }
             ]
         };
+*/
 
-        function createDataset() {
+        /*function createDataset() {
             powerBi.CreateDataSet(JSON.stringify(body))
                 .then(function (response) {
                     console.log(response);
 
                 })
-        }
+        }*/
 
         var request = new XMLHttpRequest();
 
