@@ -19,10 +19,12 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
         $scope.datasets;
         $scope.tables;
 
+        $scope.datasetID = $scope.datasets.id;
+
         listAllDashboards();
         listAllGroups();
         listAllDatasets();
-        listAllTables();
+
 
         function listAllDashboards() {
             powerBi.listAllDashboards()
