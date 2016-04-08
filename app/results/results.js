@@ -207,7 +207,7 @@ angular.module('casusMIT3.results', ['ngRoute', 'AdalAngular', 'ngMaterial'])
 
         var request = new XMLHttpRequest();
 
-        request.open('POST', 'https://api.powerbi.com/v1.0/myorg/datasets?defaultRetentionPolicy=None');
+        request.open('POST', 'https://api.powerbi.com/v1.0/myorg/datasets');
 
         request.setRequestHeader('Content-Type', 'application/json');
 
