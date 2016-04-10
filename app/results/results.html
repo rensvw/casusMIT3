@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-        <div ng-cloak>
+        <div ng-cloak class="container">
 
-            class="container">
+
 
             <h1>Power BI</h1>
 
@@ -39,9 +39,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Reports
-                    <select ng-show="workspaces" ng-model="selectedWorkspace">
-                        <option ng-repeat="workspace in workspaces" value="{{workspace.id}}">{{workspace.name}}</option>
-                    </select>
+                    <label>
+                        <select ng-show="workspaces" ng-model="selectedWorkspace">
+                            <option ng-repeat="workspace in workspaces" value="{{workspace.id}}">{{workspace.name}}
+                            </option>
+                        </select>
+                    </label>
                     <i ng-show="!reports && !reportError" class="fa fa-spinner fa-spin"></i>
                     <i ng-show="reportError" class="fa fa-warning text-color-error" data-toggle="tooltip" data-placement="left" title="{{reportError}}"></i>
                 </div>
@@ -69,9 +72,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Embedded Report
-                    <select ng-show="reports" ng-model="selectedReport">
-                        <option ng-repeat="report in reports" value="{{report.embedUrl}}">{{report.name}}</option>
-                    </select>
+                    <label>
+                        <select ng-show="reports" ng-model="selectedReport">
+                            <option ng-repeat="report in reports" value="{{report.embedUrl}}">{{report.name}}</option>
+                        </select>
+                    </label>
                     <i ng-show="!reports && !reportError" class="fa fa-spinner fa-spin"></i>
                 </div>
 
@@ -123,7 +128,6 @@
                 </md-tabs>
             </md-content>-->
         </div>
-
-    </div>
     <div class="col-md-1"></div>
-</div>
+    </div>
+
